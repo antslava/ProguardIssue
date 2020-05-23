@@ -1,0 +1,20 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+dependencies {
+    compileOnly 'com.android.tools.lint:lint-api:26.5.3'
+    compileOnly 'com.android.tools.lint:lint-checks:26.5.3'
+    compileOnly 'com.android.tools.lint:lint-checks:26.5.3'
+    compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
+
+jar {
+    manifest {
+        attributes(
+                "Lint-Registry-v2": "com.sample.lint.TestIssuesRegistry"
+        )
+    }
+}
